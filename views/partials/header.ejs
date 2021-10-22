@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<nav>
+  <div class="nav-center">
+    <ul class="links">
+      <li>
+        <a href="/home">home</a>
+      </li>
+      <li>
+        <a href="/products">Products</a>
+      </li>
+      <% if(isAdmin) {%>
+        <li>
+          <a href="/admin">Dashboard</a>
+        </li>
+      <%}%>
+      <% if (isUser) { %>
+        <li>
+          <a href="/">Cart</a>
+        </li>
+        <form action="/logout" method="post">
+          <button type="submit" value="logout" style="margin-top: 0px;height: 45px;width: 80px;">Logout</button>
+        </form>
+      <%} else { %>
+        <li>
+          <a href="/register">Register</a>
+        </li>
+        <li>
+          <a href="/login">Login</a>
+        </li>
+      <% } %>
+      
+    </ul>
+  </div>
+</nav>

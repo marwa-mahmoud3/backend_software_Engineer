@@ -1,0 +1,67 @@
+
+<%- include('partials/header'); -%>
+<div class="wrapper" style="background-image: url('/images/bg-registration-form-1.jpg');">
+	<div class="inner" style="margin-top: 80px;">
+		<div class="image-holder">
+			<img src="/images/registration-form-1.jpg" alt="" style="height: 480px;width: 100%">
+		</div>
+		<form action="/register" method="post">
+			<h3>Registration Form</h3>
+			<% if(authError) {%>
+				<p style="color: blue;background-color: lightblue;padding: 10px;">
+					<%= authError %>
+				</p>
+			<%}%>
+
+			<div class="form-wrapper">
+				<br>
+				<input type="text" name="username" placeholder="Username" class="form-control">
+				<i class="zmdi zmdi-account"></i>
+			</div>
+			<% let usernameError = validationErrors.find(err=> err.param === 'username')%>
+			<% if(usernameError) {%>
+				<p style="color: blue;background-color: lightblue;padding: 10px;">
+					<%= usernameError.msg %>
+				</p>
+			<%}%>	
+				
+			<div class="form-wrapper">
+				<br>
+				<input type="email" name="email"  placeholder="Email Address" class="form-control">
+				<i class="zmdi zmdi-email"></i>
+			</div>
+			<% let emailError = validationErrors.find(err=> err.param === 'email')%>
+			<% if(emailError) {%>
+				<p style="color: blue;background-color: lightblue;padding: 10px;">
+					<%= emailError.msg %>
+				</p>
+			<%}%>	
+
+			<div class="form-wrapper">
+				<br>
+				<input type="password" name="password" placeholder="Password" class="form-control">
+				<i class="zmdi zmdi-lock"></i>
+			</div>
+			<% let passwordError = validationErrors.find(err=> err.param === 'password')%>
+			<% if(passwordError) {%>
+				<p style="color: blue;background-color: lightblue;padding: 10px;">
+					<%= passwordError.msg %>
+				</p>
+			<%}%>	
+
+			<div class="form-wrapper">
+				<br>
+				<input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control">
+				<i class="zmdi zmdi-lock"></i>
+			</div>
+			<button type="submit">
+				Register
+			</button>
+			<div class="form-wrapper" style="margin-top: 20px;">
+				<span>Do have account ? </span>
+				<a style="color: blue;" href="/login">Sign in</a>
+			</div>
+		</form>
+	</div>
+</div>	
+ 

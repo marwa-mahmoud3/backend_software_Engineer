@@ -1,0 +1,47 @@
+<%- include('partials/header'); -%>
+		
+<div class="wrapper" style="background-image: url('/images/bg-registration-form-1.jpg');">
+	<div class="inner" style="margin-top: 120px;">
+		<div class="image-holder" style="width: 80%;">
+			<img src="/images/registration-form-1.jpg" alt="" style="width: 100%">
+		</div>
+		<form action="/login" method="post" style="width: 100%;">
+			<h3>Login Form</h3>
+			<% if(authError) {%>
+			<p style="color: blue;background-color: lightblue;padding: 10px;">
+				<%= authError %>
+			</p>
+			<%}%>
+			<br>
+			<div class="form-wrapper">
+				<input type="email" name="email" placeholder="Email Address" class="form-control" >
+				<i class="zmdi zmdi-email"></i>			
+			</div>
+			<% let emailError = validationError.find(err=> err.param === 'email')%>
+			<% if(emailError) {%>
+				<p style="color: blue;background-color: lightblue;padding: 10px;">
+					<%= emailError.msg %>
+				</p>
+			<%}%>
+
+			<div class="form-wrapper" >
+				<br><br>
+				<input type="password" name="password" placeholder="Password" class="form-control" >
+				<i class="zmdi zmdi-lock"></i>		
+			</div>
+			<% let passwordError = validationError.find(err=> err.param === 'password')%>
+				<% if(passwordError) {%>
+					<p style="color: blue;background-color: lightblue;padding: 10px;">
+						<%= passwordError.msg %>
+					</p>
+				<%}%>
+			<button type="submit">
+				Login
+			</button>
+			<div class="form-wrapper" style="margin-top: 20px;">
+				<span>Don't have account ? </span>
+				<a style="color: blue;" href="/register">Create Accout</a>
+			</div>
+		</form>
+	</div>
+</div>		
