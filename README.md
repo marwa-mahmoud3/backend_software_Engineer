@@ -18,7 +18,7 @@ This is the project structure to help you to start building your own RESTful web
   <li>app.js : Configure everything that has to do with Express application. </li>
   <li>routes : The goal of the route is to guide the request to the correct handler function which will be in one of the controllers </li>
   <li>controllers : Handle the application request, interact with models and send back the response to the client</li>
-  <li>models -> auth.model.js: (Business logic) related to business rules, how the business works and business needs ( Creating new user in the database, checking if the user password is correct, validating user input data)</li>
+  <li>models (auth.model.js) : (Business logic) related to business rules, how the business works and business needs ( Creating new user in the database, checking if the user password is correct, validating user input data)</li>
 </ul>
 
 
@@ -32,3 +32,4 @@ This is the project structure to help you to start building your own RESTful web
   <li>express-validator</li>
   <li>connect-flash</li>
 </ul>
+
