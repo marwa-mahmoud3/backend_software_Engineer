@@ -31,5 +31,7 @@ This is the project structure to help you to start building your own RESTful web
   <li>connect-mongodb-session</li>
   <li>express-validator</li>
   <li>connect-flash</li>
+  <li>bcrypt</li>
+  <li>ejs</li>
 </ul>
 
